@@ -1,8 +1,10 @@
 # Git Proxy Toggler Extension for Visual Studio Code
 
 ![GitHub](https://img.shields.io/github/license/uroozgeek/git-proxy-toggler)
-![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/uroozgeek/git-proxy-toggler)
-![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/uroozgeek/git-proxy-toggler)
+![Install Count](https://img.shields.io/visual-studio-marketplace/i/uroozgeek.git-proxy-toggler?label=Installs)
+![Rating](https://img.shields.io/visual-studio-marketplace/r/uroozgeek.git-proxy-toggler?label=Rating)
+![Version](https://img.shields.io/visual-studio-marketplace/v/uroozgeek.git-proxy-toggler?label=Version)
+![VS Code Compatibility](https://img.shields.io/badge/VS%20Code%20Compatibility-Compatible-brightgreen)
 
 ## Overview
 
@@ -16,7 +18,7 @@ The Git Proxy Toggler extension for Visual Studio Code allows you to easily togg
 
 ## Installation
 
-You can install this extension via the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=yourusername.your-extension-name).
+You can install this extension via the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=uroozgeek.git-proxy-toggler).
 
 1. Open Visual Studio Code.
 2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
@@ -40,7 +42,7 @@ This extension is licensed under the [MIT License](LICENSE).
 
 ## Issues and Feedback
 
-If you encounter any issues, have questions, or would like to provide feedback, please open an issue on the [GitHub repository](https://github.com/yourusername/your-extension-repo/issues).
+If you encounter any issues, have questions, or would like to provide feedback, please open an issue on the [GitHub repository](https://github.com/uroozgeek/git-proxy-toggler/issues).
 
 ## Contribution
 
