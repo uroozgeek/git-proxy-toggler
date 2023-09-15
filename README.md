@@ -1,8 +1,8 @@
 # Git Proxy Toggler Extension for Visual Studio Code
 
-![GitHub](https://img.shields.io/github/license/yourusername/your-extension-repo)
-![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/yourusername/your-extension-name)
-![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/yourusername/your-extension-name)
+![GitHub](https://img.shields.io/github/license/uroozgeek/git-proxy-toggler)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/uroozgeek/git-proxy-toggler)
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/uroozgeek/git-proxy-toggler)
 
 ## Overview
 
@@ -32,7 +32,7 @@ You can install this extension via the [Visual Studio Code Marketplace](https://
 
 ## Configuration
 
-By default, the extension uses the proxy URL `"http://webproxystatic-on.tsl.telus.com:8080"`. You can customize this URL by editing the extension code.
+By default, the extension uses the proxy URL `"http://127.0.0.1:8080"`. You can customize this URL by launching the extension and setting the proxy url.
 
 ## License
 
