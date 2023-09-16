@@ -12,8 +12,9 @@ The Git Proxy Toggler extension for Visual Studio Code allows you to easily togg
 
 ## Features
 
-- Toggle Git HTTP proxy settings with a single click.
-- Set and unset the proxy URL as needed.
+- Toggle Git HTTP proxy settings with a single click using extension's status bar icon.
+- Shows current proxy status in convenient status bar icon
+- Set and unset the proxy URL as needed by launching the extension.
 - Provides quick access to proxy configuration.
 
 ## Installation
@@ -34,7 +35,7 @@ You can install this extension via the [Visual Studio Code Marketplace](https://
 
 ## Configuration
 
-By default, the extension uses the proxy URL `"http://127.0.0.1:8080"`. You can customize this URL by launching the extension and setting the proxy url.
+By default, the extension uses the proxy URL `"http://127.0.0.1:8080"`. You can customize this URL by launching the extension settings and modifying the proxy url or directly modifying `"gitProxyToggler.defaultProxyUrl"` in settings.json file to your desired value.
 
 ## License
 
