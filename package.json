@@ -20,7 +20,18 @@
         "command": "extension.toggleGitProxy",
         "title": "Git Proxy Toggler"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Git Proxy Toggler",
+      "properties": {
+        "gitProxyToggler.defaultProxyUrl": {
+          "type": "string",
+          "description": "The default proxy URL for Git Proxy Toggler.",
+          "default": "http://127.0.0.1:8080"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

@@ -1,16 +1,14 @@
 import * as vscode from 'vscode';
 import * as child_process from 'child_process';
 
-let proxyUrl: string;
-
 async function toggleGitProxy() {
 	// Check if the Git proxy is currently set
-	const isGitProxySet = gitProxyIsSet();
+	const currentProxyUrl = getCurrentProxyUrl();
 
-	if (isGitProxySet) {
+	if (currentProxyUrl) {
 		// Git proxy is set
 		const choice = await vscode.window.showQuickPick(['Unset Git Proxy', 'Cancel'], {
-			placeHolder: `Git proxy is currently set to ${proxyUrl}`,
+			placeHolder: `Git proxy is currently set to ${currentProxyUrl}`,
 		});
 
 		if (!choice || choice === 'Cancel') {
@@ -33,10 +31,15 @@ async function toggleGitProxy() {
 			return;
 		}
 
-		// Prompt user for custom proxy URL
+		// Get the default proxy URL from extension settings
+		const config = vscode.workspace.getConfiguration('gitProxyToggler');
+		const defaultProxyUrl = config.get<string>('defaultProxyUrl');
+
+		// Prompt user for custom proxy URL or show default
 		const customProxyUrl = await vscode.window.showInputBox({
-			prompt: 'Enter the custom proxy URL (e.g., http://yourproxyurl:port)',
+			prompt: `Enter the custom proxy URL (Default: ${defaultProxyUrl})`,
 			placeHolder: 'Proxy URL',
+			value: defaultProxyUrl // Show the default value in the input box if set
 		});
 
 		if (!customProxyUrl) {
@@ -47,26 +50,19 @@ async function toggleGitProxy() {
 		// Set Git proxy
 		child_process.execSync(`git config --global http.proxy ${customProxyUrl}`);
 		child_process.execSync(`git config --global https.proxy ${customProxyUrl}`);
-		vscode.workspace.getConfiguration('gitProxyToggler').update('proxyUrl', customProxyUrl, vscode.ConfigurationTarget.Global);
-		proxyUrl = customProxyUrl; // Update the proxyUrl variable with the custom value
 		vscode.window.showInformationMessage(`Git proxy set to ${customProxyUrl}.`);
 	}
 }
 
-function gitProxyIsSet(): boolean {
+function getCurrentProxyUrl(): string {
 	try {
-		child_process.execSync('git config --global --get http.proxy');
-		return true;
+		return child_process.execSync('git config --global --get http.proxy').toString().trim();
 	} catch (error) {
-		return false;
+		return '';
 	}
 }
 
 export function activate(context: vscode.ExtensionContext) {
-	// Get the proxy URL from user settings or use a default
-	const config = vscode.workspace.getConfiguration('gitProxyToggler');
-	proxyUrl = config.get<string>('proxyUrl') || "http://127.0.0.1:8080";
-
 	let disposable = vscode.commands.registerCommand('extension.toggleGitProxy', toggleGitProxy);
 	context.subscriptions.push(disposable);
 }
