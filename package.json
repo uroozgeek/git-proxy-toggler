@@ -2,7 +2,7 @@
   "name": "git-proxy-toggler",
   "displayName": "Git Proxy Toggler",
   "description": "The Git Proxy Toggler extension for Visual Studio Code allows you to easily toggle the Git HTTP proxy settings right from within your code editor. It simplifies the process of enabling or disabling the Git proxy, making it convenient for development in various network environments.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/uroozgeek/git-proxy-toggler",
   "engines": {
     "vscode": "^1.82.0"
@@ -20,8 +20,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.toggleGitProxy",
-        "title": "Git Proxy Toggler"
+        "command": "extension.setUnsetGitProxy",
+        "title": "Set/Unset Git Proxy"
       }
     ],
     "configuration": {

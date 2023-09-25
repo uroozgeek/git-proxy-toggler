@@ -3,7 +3,7 @@ import * as child_process from 'child_process';
 
 let statusBar: vscode.StatusBarItem;
 
-async function toggleGitProxy() {
+async function setUnsetGitProxy() {
 	// Check if the Git proxy is currently set
 	const currentProxyUrl = getCurrentProxyUrl();
 
@@ -55,7 +55,7 @@ async function toggleGitProxy() {
 	updateStatusBar();
 }
 
-function setUnsetGitProxy() {
+function toggleGitProxy() {
 	const currentProxyUrl = getCurrentProxyUrl();
 	if (currentProxyUrl) {
 		// Proxy is set
@@ -108,14 +108,14 @@ function updateStatusBar() {
 export function activate(context: vscode.ExtensionContext) {
 	// Create a StatusBar item
 	statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-	statusBar.command = 'extension.setUnsetGitProxy';
+	statusBar.command = 'extension.toggleGitProxy';
 	context.subscriptions.push(statusBar);
 
-	let statusBarCommand = vscode.commands.registerCommand('extension.setUnsetGitProxy', setUnsetGitProxy);
+	let statusBarCommand = vscode.commands.registerCommand('extension.toggleGitProxy', toggleGitProxy);
 	context.subscriptions.push(statusBarCommand);
 
-	let toggleGitProxyCommand = vscode.commands.registerCommand('extension.toggleGitProxy', toggleGitProxy);
-	context.subscriptions.push(toggleGitProxyCommand);
+	let setUnsetProxyCommand = vscode.commands.registerCommand('extension.setUnsetGitProxy', setUnsetGitProxy);
+	context.subscriptions.push(setUnsetProxyCommand);
 
 	updateStatusBar();
 }

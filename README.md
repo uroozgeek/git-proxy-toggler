@@ -30,8 +30,9 @@ You can install this extension via the [Visual Studio Code Marketplace](https://
 
 1. Open a project in Visual Studio Code.
 2. Use the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).
-3. Type "Git Proxy Toggler" and select the command to run.
+3. Type "Set/Unset Git Proxy" and select the command to run.
 4. Follow the prompts to set or unset the Git proxy as needed.
+5. Also you can quickly toggle(either set the default or unset) the git proxy url by clicking the icon in status bar. 
 
 ## Configuration
 
